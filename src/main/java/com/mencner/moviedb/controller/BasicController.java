@@ -1,7 +1,7 @@
 package com.mencner.moviedb.controller;
 
-import com.mencner.moviedb.data.Name;
-import com.mencner.moviedb.data.NamesDao;
+import com.mencner.moviedb.repository.Name;
+import com.mencner.moviedb.repository.NamesDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

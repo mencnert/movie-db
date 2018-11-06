@@ -1,4 +1,4 @@
-package com.mencner.moviedb.data;
+package com.mencner.moviedb.repository;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,18 +8,22 @@ import java.io.Serializable;
 public class Name implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name="ID")
-    private int id;
+    @Column(name="id")
+    private Long id;
 
-    @Column(nullable = false, name = "name")
+    @Column(name = "name")
     private String name;
 
-    public Name() {
+    protected Name() {
 
     }
 
-    public int getId() {
+    public Name(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Long getId() {
         return this.id;
     }
 
@@ -27,7 +31,7 @@ public class Name implements Serializable {
         return this.name;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
