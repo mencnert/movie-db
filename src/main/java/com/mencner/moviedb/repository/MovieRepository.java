@@ -10,6 +10,8 @@ import java.util.Optional;
 @Repository
 public interface MovieRepository extends CrudRepository<Movie, Long> {
     List<Movie> findAll();
+
+    List<Movie> findByNameContainingIgnoreCase(String subName);
+
     Optional<Movie> findById(Long id);
-    List<Movie> findByNameContaining(String subName);
 }

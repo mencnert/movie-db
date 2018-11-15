@@ -10,27 +10,37 @@ public class Movie implements Serializable {
     @GeneratedValue
     private long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = NAME, nullable = false)
     private String name;
 
-    @Column(name = "year", nullable = false)
+    @Column(name = YEAR, nullable = false)
     private int year;
 
-    @Column(name = "genre", nullable = false)
+    @Column(name = GENRE, nullable = false)
     private String genre;
 
-    @Column(name = "director", nullable = false)
+    @Column(name = DIRECTOR, nullable = false)
     private String director;
+
+    @Column(name = EVALUATION, nullable = false)
+    private float evaluation;
+
+    public static final String NAME = "name";
+    public static final String YEAR = "year";
+    public static final String DIRECTOR = "director";
+    public static final String EVALUATION = "evaluation";
+    private static final String GENRE = "genre";
 
     protected Movie() {
 
     }
 
-    public Movie(String name, int year, String genre, String director) {
+    public Movie(String name, int year, String genre, String director, float evaluation) {
         this.name = name;
         this.year = year;
         this.genre = genre;
         this.director = director;
+        this.evaluation = evaluation;
     }
 
     public String getName() {
@@ -67,5 +77,13 @@ public class Movie implements Serializable {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    public float getEvaluation() {
+        return this.evaluation;
+    }
+
+    public void setEvaluation(float evaluation) {
+        this.evaluation = evaluation;
     }
 }
